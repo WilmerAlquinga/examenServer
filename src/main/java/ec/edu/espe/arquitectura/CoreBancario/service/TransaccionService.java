@@ -37,6 +37,10 @@ public class TransaccionService {
         }
     }
 
+    public void crearTransaccion(Transaccion transaccion) {
+        this.transaccionRepository.save(transaccion);
+    }
+
     public Boolean validarCliente(Integer codigoInterno) {
         Cuenta cuenta = this.cuentaRepository.findByCodigoInterno(codigoInterno);
         if(cuenta != null) {
